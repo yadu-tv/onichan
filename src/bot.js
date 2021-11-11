@@ -84,37 +84,4 @@ client.on('messageCreate', (message) => {
     }
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 client.login( process.env.DISCORDJS_BOT_TOKEN );
