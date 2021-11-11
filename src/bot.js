@@ -25,16 +25,6 @@ client.on('messageCreate', (message) => {
     }
 })
 
-// Replies to basic Hi messages
-var hey = ['hey', 'wassup', 'how you doing', 'hi', 'sussy bakka', 'sussy baka']
-client.on('messageCreate', (message) => {
-    for (var i = 0; i < hey.length; i++ ) {
-        if (message.content.toLowerCase() === `${hey[i]} onichan`) {
-            message.reply('Hey there!');
-        }
-    }
-})
-
 // Smirks to messages containing 69 in it, excluding people in the blacklist
 var sixtyNine = [69];
 var blcountr = 0;
@@ -69,30 +59,6 @@ client.on('messageDelete', (messageDelete) => {
 
     client.channels.cache.get(`${DeletedMessageLog}`).send({ embeds: [messageDeleteEmbed]});
 })
-
-/* Kick and Ban command
-client.on('messageCreate', (message) => {
-    if (message.author.id === client.user.id) return;
-    if (message.content.charAt(0, `${prefix}`)) {
-        const [cmd_name, ...args] = message.content.trim().substr(prefix.length).split("\/s+/");
-
-        if (cmd_name === 'kick') {
-            if (args.length === 0) return message.reply('Please provide an ID')
-            const member = message.guild.members.cache.get(args[0]);
-            if (member) {
-                member.kick();
-            } else {
-                message.channel.send('The member was not found');
-            }
-
-            
-            message.channel.send('Kicked the user');
-        } else if (cmd_name === 'ban') {
-            message.channel.send('Banned the user');
-        }
-    }
-})
-*/
 
 // Command to send invite link
 client.on('messageCreate', (message) => {
